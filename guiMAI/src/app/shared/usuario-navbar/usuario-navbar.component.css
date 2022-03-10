@@ -1,0 +1,29 @@
+.sub-navbar {
+    margin-top: 60px;
+    position: fixed;
+    top: 0px;
+}
+
+.container{
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+.container p{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.salir {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-align: right;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }

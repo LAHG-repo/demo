@@ -1,0 +1,10 @@
+<label class="control-label" for="date">{{etiqueta}}<span *ngIf="esOpcional===false" class=" form-text">*</span>:</label>
+<mat-form-field [floatLabel]="'never'">
+    <input id="date" #inputFecha  type="text"
+    disabled
+    maxlength="10" matInput class="form-control"
+    [matDatepicker]="picker" [placeholder]="placeholder"
+        (dateInput)="addEvent('input', $event)" [ngClass]="{'mat-datepicker-input-red': isMatError}">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker (opened)="resetPicker()" #picker disabled="false"></mat-datepicker>
+</mat-form-field>

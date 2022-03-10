@@ -1,0 +1,24 @@
+<div class="modal-header" >
+    <h4 class="modal-title" >
+      <span [innerHTML]="data.titulo"></span>
+      <button type="button" class="close" (click)="onNoClick()"
+        data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">X</span>
+      </button>
+    </h4>
+
+
+</div>
+<div class="modal-body text-center">
+    <span [innerHTML]="data.mensaje"></span>
+</div>
+<div class="modal-footer">
+    <button aria-label="Cancelar" type="button" class="btn btn-danger"
+    data-dismiss="modal" (click)="funcionCancelar()">
+        <span aria-hidden="true" [innerHTML]="data.textoBotonCancelar"></span>
+    </button>
+    <button aria-label="Aceptar" type="button" class="btn btn-primary"
+    data-dismiss="modal" (click)="funcionAceptar()">
+        <span aria-hidden="true" [innerHTML]="data.textoBotonAceptar"></span>
+    </button>
+</div>

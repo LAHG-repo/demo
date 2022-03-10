@@ -1,0 +1,82 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.mat-simple-snackbar-action {
+  color: #666666;
+}
+
+.panelAlertError {
+  color: #666666;
+  background-color: #f2dede;
+  border: 1px solid #f2dede;
+}
+
+.panelAlertSuccess {
+  color: #3c763d;
+  background-color: #d6e9c6;
+  border: 1px solid #d6e9c6;
+}
+
+.cdk-overlay-container {
+  top: 100px;
+}
+
+.main-content {
+  padding-top: 80px;
+  background-color: #fff;
+  min-height: 600px;
+  padding-bottom: 50px;
+}
+
+.texto-primario:hover {
+  color: #d4c19c;
+}
+
+.background {
+  background-color: transparent;
+  background-image: linear-gradient(
+    43.52deg,
+    #000000 0.27%,
+    rgba(14, 98, 69, 0.28) 110.99%
+  ), url("./assets/images/fondo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.form-text-error {
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #e10000;
+}
+
+.label-campos-obligatorios {
+  width: 169px;
+  height: 19px;
+  margin: 20px 1px 0 229px;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: right;
+  color: #404041;
+}
+
+.spinner-texto{
+  font-size: 20px; color: white
+}
+
+.border-validate{
+  border-color: #D0021B;
+}
+
+@media all and (max-width: 912px) {
+
+}

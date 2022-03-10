@@ -1,0 +1,40 @@
+::ng-deep .snack {
+  padding: 0px;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  margin-right: -25px;
+}
+
+.alert,
+.thumbnail {
+  margin-bottom: 0px;
+}
+
+.alert {
+  width: 800px !important;
+}
+
+.alert-dismissable,
+.alert-dismissible {
+  padding-right: 0px;
+}
+
+.alert-success {
+  border-color: #3c763d;
+}
+
+.alert-info {
+  border-color: #31708f;
+}
+
+::ng-deep .cdk-overlay-container {
+  z-index: 10000 !important;
+  top: 0px !important;
+}
+
+@media all and (max-width: 912px) {
+  .alert {
+    width: 100% !important;
+    margin-left: -8px;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="row" *ngIf="esPrimeraVez === false; else actualizar">
+    <div class="col-xs-12">
+        <span>
+            <p>Ingresa tu información</p>
+        </span>
+    </div>
+
+    <form [formGroup]="loginform" autocomplete="off" novalidate role="form">
+        <div class="col-xs-12 espacio">
+            <app-campo-texto-gobmx
+                [mensajeError]="loginform.controls.curp?.errors?.required ? null :
+                (loginform.errors?.noValido || loginform.controls.curp?.errors?.minlength) ?
+                'El formato de la CURP proporcionada no es correcto': null"
+                [longitud]="18" [formGroup]="loginform" [id]="'curp'" [tipo]="tipoCampo.ALFANUMERICO"
+                [placeholder]="'Ingresa tu CURP'" [etiqueta]="'Cave única de registro de población (CURP)'" [esObligatorio]="true"
+                [mostrarError]=" isSubmited && (loginform.errors?.noValido || loginform.controls.curp?.errors)">
+            </app-campo-texto-gobmx>
+            <a rel="noopener" type="button" href="https://www.gob.mx/curp/" target="_blank" class="vinculo">¿No conoces tu CURP? Consulta aquí</a>
+        </div>
+
+        <div class="col-xs-12 espacio">
+            <app-campo-texto-gobmx
+                [longitud]="6" [formGroup]="loginform" [id]="'noempleado'" [tipo]="tipoCampo.NUMERICO"
+                [placeholder]="'Ingresa tu número de empleado'" [etiqueta]="'Número de empleado'" [esObligatorio]="true"
+                [mostrarError]=" loginform.controls.noempleado?.errors && isSubmited">
+            </app-campo-texto-gobmx>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="captcha-div">
+            <re-captcha id="recaptcha" name="recaptcha" formControlName="captcha" required
+             [class.is-invalid]="loginform.controls.captcha.invalid && (loginform.controls.captcha.dirty || loginform.controls.captcha.touched)"></re-captcha>
+          </div>
+          <span-campo-obligatorio *ngIf="loginform.controls.captcha?.errors?.required && isSubmited">
+          </span-campo-obligatorio>
+       </div>
+        <div class="col-xs-12 espacio-top">
+            <button type="button" (click)="doLogin()"
+                class="pull-right btn btn-primary btn-acceder">Acceder</button>
+        </div>
+    </form>
+</div>
+
+<ng-template #actualizar>
+    <app-cambio-password></app-cambio-password>
+</ng-template>

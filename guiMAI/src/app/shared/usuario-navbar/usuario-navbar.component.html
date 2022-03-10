@@ -1,0 +1,13 @@
+<nav *ngIf="estaLogeado" class="navbar navbar-inverse sub-navbar">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <p class="navbar-text pull-left">{{usuario | uppercase}}</p>
+        </div>
+        <div class="col-xs-6">
+          <p class="navbar-text pull-right"><a class="salir" (click)="doCerrarSesion()">Cerrar sesión</a></p>
+        </div>
+      </div>
+
+    </div>
+</nav>

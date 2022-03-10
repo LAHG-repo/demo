@@ -1,0 +1,31 @@
+<div class="form-group" [formGroup]="formGroup">
+  <label [for]="id" class="control-label">
+    {{ etiqueta }}<span *ngIf="esObligatorio" class="form-text">*</span>:
+  </label>
+  <input
+    [id]="id"
+    [name]="id"
+    [attr.placeholder]="placeholder"
+    [attr.maxlength]="longitud"
+    [formControlName]="id"
+    class="form-control"
+    [type]="esPassword && !fieldTextType? 'password' : 'search'"
+    autocomplete="off"
+    mayusculas
+    [desactivar]="soloMayusculas === false"
+    (keypress)="mascara($event)"
+    bordeValidacion
+    [mostrarError]="mostrarError"
+    [mensaje]="mensajeError"
+  />
+  <span
+    *ngIf="esPassword"
+    (click)="togglePassword($event)"
+    class="fa fa-fw field-icon toggle-password"
+    [ngClass]="{
+      'fa-eye-slash': !fieldTextType,
+      'fa-eye': fieldTextType
+    }"
+  >
+  </span>
+</div>
