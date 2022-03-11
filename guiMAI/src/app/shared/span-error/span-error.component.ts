@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'span-error',
   templateUrl: './span-error.component.html',
-  styleUrls: ['./span-error.component.css']
+  styleUrls: ['./span-error.component.scss']
 })
 export class SpanErrorComponent implements OnInit {
   @Input() msgError: string;

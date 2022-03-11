@@ -9,7 +9,7 @@ import * as moment from 'moment';
 @Component({
   selector: 'fecha-mx',
   templateUrl: './fecha.component.html',
-  styleUrls: ['./fecha.component.css'],
+  styleUrls: ['./fecha.component.scss'],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'es-MX' },
     {

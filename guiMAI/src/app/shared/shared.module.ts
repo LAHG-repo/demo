@@ -29,9 +29,14 @@ import { SpanErrorComponent } from './span-error/span-error.component';
 import { CampoTextoGobmxComponent } from './campo-texto-gobmx/campo-texto-gobmx.component';
 import { ControlErrorsDirective } from './directivas/control-error.directive';
 import { MayusculasDirective } from './directivas/mayusculas.directive';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalAvisoGobmxComponent } from './modalgobmx/modal-aviso-gobmx/modal-aviso-gobmx.component';
 import { UsuarioNavbarComponent } from './usuario-navbar/usuario-navbar.component';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { RepeatTypeComponent } from './formly-types/repeat-component';
+import { FormlyFieldButton } from './formly-types/field-button.component';
+
 
 
 
@@ -53,7 +58,9 @@ const maskConfig: Partial<IConfig> = {
     MayusculasDirective,
     ControlErrorsDirective,
     ModalAvisoGobmxComponent,
-    UsuarioNavbarComponent
+    UsuarioNavbarComponent,
+    RepeatTypeComponent,
+    FormlyFieldButton
   ],
   imports: [
     RouterModule,
@@ -77,7 +84,30 @@ const maskConfig: Partial<IConfig> = {
     MatDatepickerModule,
     MatSnackBarModule,
     MatNativeDateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    FormlyModule.forRoot({
+      types: [
+        { name: 'repeat', component: RepeatTypeComponent },
+        {
+          name: 'button',
+          component: FormlyFieldButton,
+          wrappers: ['form-field'],
+          defaultOptions: {
+            templateOptions: {
+              btnType: 'default',
+              type: 'button',
+            },
+          },
+        },
+      ],
+      wrappers: [],
+      validators: [],
+      validationMessages: [
+        { name: 'required', message: `Este campo es obligatorio` },
+      ],
+    }),
+    FormlyBootstrapModule
   ],
   exports:[
     ModalgobmxComponent,
@@ -98,7 +128,10 @@ const maskConfig: Partial<IConfig> = {
     CampoTextoGobmxComponent,
     ModalAvisoGobmxComponent,
     UsuarioNavbarComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    FormlyModule,
+    FormlyBootstrapModule
   ]
 })
 export class SharedModule { }

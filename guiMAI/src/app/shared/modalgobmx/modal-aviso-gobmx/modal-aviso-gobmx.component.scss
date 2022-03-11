@@ -1,0 +1,44 @@
+::ng-deep .mat-dialog-container {
+    padding: 0px !important;
+  }
+
+  ::ng-deep .cdk-overlay-container {
+    z-index: 10000 !important;
+    top: 0px !important;
+  }
+
+  .modal-header {
+    min-height: 40px;
+    width: 600px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  .close {
+    color: #fff;
+    top: 5px;
+    position: relative;
+    right: 0px;
+  }
+
+  .boton-header {
+    position: relative;
+    bottom: 10px;
+    margin-top: 15px;
+  }
+
+  .modal-body {
+    max-width: 600px;
+    overflow-wrap: normal;
+    text-align: center;
+  }
+
+  @media all and (max-width: 912px) {
+    .modal-body {
+      max-width: 100%;
+    }
+
+    .modal-header {
+      width: inherit;
+    }
+  }

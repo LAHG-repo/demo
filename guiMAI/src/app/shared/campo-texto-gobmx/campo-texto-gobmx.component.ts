@@ -6,7 +6,7 @@ import { TipoInput } from './tipo-input.enum';
 @Component({
   selector: 'app-campo-texto-gobmx',
   templateUrl: './campo-texto-gobmx.component.html',
-  styleUrls: ['./campo-texto-gobmx.component.css']
+  styleUrls: ['./campo-texto-gobmx.component.scss']
 })
 export class CampoTextoGobmxComponent implements OnInit {
 

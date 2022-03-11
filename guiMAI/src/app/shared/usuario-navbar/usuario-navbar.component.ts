@@ -10,7 +10,7 @@ import { LocationStrategy } from '@angular/common';
 @Component({
   selector: 'app-usuario-navbar',
   templateUrl: './usuario-navbar.component.html',
-  styleUrls: ['./usuario-navbar.component.css']
+  styleUrls: ['./usuario-navbar.component.scss']
 })
 export class UsuarioNavbarComponent implements OnInit {
 

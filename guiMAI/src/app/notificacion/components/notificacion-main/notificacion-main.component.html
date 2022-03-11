@@ -1,0 +1,119 @@
+<div class="container">
+  <div class="row justify-content-center ">
+
+      <div class="panel-group ficha-collapse" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-parent="#accordion" data-toggle="collapse" href="#panel-01" aria-expanded="true"
+                aria-controls="panel-01">
+                Amparo
+              </a>
+            </h4>
+            <button type="button" class="collpase-button collapsed" data-parent="#accordion" data-toggle="collapse"
+              href="#panel-01"></button>
+          </div>
+          <div class="panel-collapse collapse in" id="panel-01">
+            <div class="panel-body">
+              <form [formGroup]="formAmparo">
+                <formly-form [model]="modelAmparo" [fields]="fieldsAmparo" [form]="formAmparo"></formly-form>
+                <button type="submit" hidden id="save-form"></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ng-container *ngIf="tipoQo == 'M'">
+        <div class="panel-group ficha-collapse" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-parent="#accordion" data-toggle="collapse" href="#panel-02" aria-expanded="true"
+                  aria-controls="panel-02">
+                  Quejoso
+                </a>
+              </h4>
+              <button type="button" class="collpase-button collapsed" data-parent="#accordion" data-toggle="collapse"
+                href="#panel-02"></button>
+            </div>
+            <div class="panel-collapse collapse in" id="panel-02">
+              <div class="panel-body">
+                <form [formGroup]="formQoMoral">
+                  <formly-form [model]="modelQoMoral" [fields]="fieldsQoMoral" [form]="formQoMoral"></formly-form>
+                  <button type="submit" hidden id="save-form"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="tipoQo == 'F'">
+        <div class="panel-group ficha-collapse" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-parent="#accordion" data-toggle="collapse" href="#panel-03" aria-expanded="true"
+                  aria-controls="panel-03">
+                  Quejoso
+                </a>
+              </h4>
+              <button type="button" class="collpase-button collapsed" data-parent="#accordion" data-toggle="collapse"
+                href="#panel-03"></button>
+            </div>
+            <div class="panel-collapse collapse in" id="panel-03">
+              <div class="panel-body">
+                <form [formGroup]="formQoFisica">
+                  <formly-form [model]="modelQoFisica" [fields]="fieldsQoFisica" [form]="formQoFisica"></formly-form>
+                  <button type="submit" hidden id="save-form"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="tipoQo == 'O'">
+        <div class="panel-group ficha-collapse" id="accordion">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-parent="#accordion" data-toggle="collapse" href="#panel-04" aria-expanded="true"
+                  aria-controls="panel-04">
+                  Quejoso
+                </a>
+              </h4>
+              <button type="button" class="collpase-button collapsed" data-parent="#accordion" data-toggle="collapse"
+                href="#panel-04"></button>
+            </div>
+            <div class="panel-collapse collapse in" id="panel-04">
+              <div class="panel-body">
+                <form [formGroup]="formQoOtro">
+                  <formly-form [model]="modelQoOtro" [fields]="fieldsQoOtro" [form]="formQoOtro"></formly-form>
+                  <button type="submit" hidden id="save-form"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+
+
+      <div class="row mb-5" >
+        <div class="col-12 d-flex justify-content-between">
+            <button name="button" type="reset"  class="btn btn-outline-secondary" (click)="onReset()">Limpiar</button>
+            <label for="save-form" class="btn btn-outline-primary " (click)="onSubmit()">GUARDAR</label>
+        </div>
+    </div>
+
+
+
+
+
+  </div>
+</div>
+
+
+

@@ -4,7 +4,9 @@ import { MainComponent } from './main/components/main/main.component';
 
 const routes: Routes = [
   { path:'main', component: MainComponent},
-  { path:'**', redirectTo: '/main', pathMatch: 'full'}
+  { path: 'notificacion', loadChildren: () => import('./notificacion/notificacion.module').then(m => m.NotificacionModule) },
+  { path:'**', redirectTo: '/main', pathMatch: 'full'},
+
 ];
 
 @NgModule({

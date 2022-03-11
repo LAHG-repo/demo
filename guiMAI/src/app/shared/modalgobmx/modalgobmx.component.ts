@@ -5,7 +5,7 @@ import { DialogData } from './dialog-data';
 @Component({
   selector: 'app-modalgobmx',
   templateUrl: './modalgobmx.component.html',
-  styleUrls: ['./modalgobmx.component.css']
+  styleUrls: ['./modalgobmx.component.scss']
 })
 export class ModalgobmxComponent implements OnInit {
 

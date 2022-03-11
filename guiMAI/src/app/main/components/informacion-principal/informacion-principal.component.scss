@@ -1,0 +1,40 @@
+.main-text {
+  text-align: center;
+  position: relative;
+  height: 580px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 59px;
+  color: #bc955c;
+}
+
+.vertical {
+  /*display: inline-block; */
+  /* max-width: 50%; */
+  white-space: pre-wrap;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media all and (max-width: 912px) {
+  .list-group {
+    margin-left: -15px;
+  }
+
+  .main-text {
+    line-height: inherit;
+    margin-top: 0px;
+    height: 200px;
+  }
+
+  .vertical {
+    max-width: inherit;
+    margin-top: 0px;
+    font-size: xx-large;
+  }
+}

@@ -1,0 +1,96 @@
+.nav-title {
+  box-shadow: 0 4px 11px 0 rgba(0, 0, 0, 0.09);
+  text-align: -webkit-right;
+  line-height: 50px;
+}
+
+.font {
+  width: 30%;
+  height: 14px;
+  flex-grow: 0;
+  margin: 5px 7px 14px auto;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.17;
+  letter-spacing: normal;
+  text-align: left;
+  color: #666;
+}
+
+.container {
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.container p {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.sub-navbar {
+  z-index: 1028;
+}
+
+.navbar {
+  margin-top: 14px;
+  background-color: #13322b;
+}
+
+.nav {
+  margin-top: 14px;
+  font-family: Montserrat;
+  font-size: 13px;
+  z-index: 4;
+  position: fixed;
+  background-color: #13322b;
+}
+
+.nav-default {
+  background-color: #13322b;
+  margin-top: 0px;
+  position: absolute;
+  top: 0px;
+  margin-left: -30px;
+}
+
+.nav-default a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav-header {
+  color: #fff;
+  float: inherit;
+  text-align: center;
+  margin-top: 24px;
+}
+
+a:focus,
+a:hover {
+  text-decoration: none !important;
+  color: #fff !important;
+}
+
+.text-start {
+  text-align: start;
+}
+
+@media all and (max-width: 912px) {
+  .nav-default {
+    margin-left: inherit !important;
+    top: inherit;
+  }
+  .nav {
+    width: 100%;
+    left: 15px;
+  }
+  .nav-header {
+    margin-top: -30px;
+    position: absolute;
+    top: inherit;
+    bottom: 10px;
+  }
+}

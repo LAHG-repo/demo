@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ErrorInterceptorService } from './shared/services/error-interceptor.service';
 import { DatePipe, registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es-MX';
+import { FormlyModule } from '@ngx-formly/core';
+import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 registerLocaleData(localeEs, 'es-MX');
 
 @NgModule({
@@ -27,7 +29,9 @@ registerLocaleData(localeEs, 'es-MX');
     NgxSpinnerModule,
     MainModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormlyModule.forRoot({ extras: { lazyRender: true } }),
+    FormlyBootstrapModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'es-MX'},
