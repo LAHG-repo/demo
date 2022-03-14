@@ -1,0 +1,115 @@
+.home-container {
+  position: relative;
+  top: 14px;
+}
+
+mat-toolbar {
+  background: #13322b;
+  color: #bc955c;
+}
+
+.toolbar-titulo {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 14px;
+  color: #ffffff;
+}
+
+.toolbar-texto {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: right;
+  color: #999999;
+}
+
+mat-sidenav {
+  width: 200px;
+  border-right: none;
+  background: #fff;
+  color: #222;
+  padding: 16px 0px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.contenido-main {
+  height: 100%;
+  min-height: 600px;
+  color: #222;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+}
+
+.cerrar-sesion {
+  position: absolute;
+  bottom: 0px;
+  background: #006455;
+}
+
+.top-boton {
+  margin-bottom: 30px;
+}
+
+.top-boton button {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}
+
+mat-icon {
+  margin-right: 8px;
+}
+
+.avatar {
+  margin-top: 16px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+.designation {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  color: lightgrey;
+}
+
+.datos-usuario {
+  position: absolute;
+  right: 25px;
+  top: 0px;
+}
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media all and (max-width: 912px) {
+  .burgerButton {
+    display: none;
+  }
+}

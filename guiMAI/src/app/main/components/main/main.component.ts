@@ -8,16 +8,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  soloDictamen = false;
+  actualizarPassword = false;
   constructor(
     private route: ActivatedRoute
     ) { }
 
   ngOnInit(): void {
-    const esdictamen = this.route.snapshot.data['esDictamen'];
-    this.soloDictamen = esdictamen;
+    this.actualizarPassword = this.route.snapshot.data['esPasswordRecuperacion'];;
   }
 
-  
+
 }
 

@@ -37,7 +37,7 @@
     43.52deg,
     #000000 0.27%,
     rgba(14, 98, 69, 0.28) 110.99%
-  ), url("./assets/images/fondo.png");
+  ), url("../src/assets/images/fondo.png");
   background-repeat: no-repeat;
   background-size: cover;
 }

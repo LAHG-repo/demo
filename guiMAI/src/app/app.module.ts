@@ -15,6 +15,9 @@ import { DatePipe, registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es-MX';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
+import { HomeModule } from './home/home.module';
+import { NotificacionModule } from './notificacion/notificacion.module';
+
 registerLocaleData(localeEs, 'es-MX');
 
 @NgModule({
@@ -28,6 +31,8 @@ registerLocaleData(localeEs, 'es-MX');
     BrowserAnimationsModule,
     NgxSpinnerModule,
     MainModule,
+    HomeModule,
+    NotificacionModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormlyModule.forRoot({ extras: { lazyRender: true } }),

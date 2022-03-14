@@ -1,20 +1,23 @@
-import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { NotificacionRoutingModule } from './notificacion-routing.module';
-import { NotificacionMainComponent } from './components/notificacion-main/notificacion-main.component';
+import { RegistroComponent } from './components/registro/registro.component';
 import { SharedModule } from '../shared/shared.module';
+import { NotificacionMainComponent } from './components/notificacion-main/notificacion-main.component';
 
 
 
 @NgModule({
   declarations: [
+    RegistroComponent,
     NotificacionMainComponent
   ],
   imports: [
-    NotificacionRoutingModule,
     CommonModule,
     SharedModule
+  ],
+  exports:[
+    RegistroComponent,
+    NotificacionMainComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

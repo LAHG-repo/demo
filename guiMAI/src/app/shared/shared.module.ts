@@ -38,6 +38,10 @@ import { RepeatTypeComponent } from './formly-types/repeat-component';
 import { FormlyFieldButton } from './formly-types/field-button.component';
 
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider'
 
 
 const maskConfig: Partial<IConfig> = {
@@ -107,7 +111,13 @@ const maskConfig: Partial<IConfig> = {
         { name: 'required', message: `Este campo es obligatorio` },
       ],
     }),
-    FormlyBootstrapModule
+    FormlyBootstrapModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ],
   exports:[
     ModalgobmxComponent,
@@ -131,7 +141,14 @@ const maskConfig: Partial<IConfig> = {
     ReactiveFormsModule,
     FormsModule,
     FormlyModule,
-    FormlyBootstrapModule
+    FormlyBootstrapModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDividerModule
   ]
 })
 export class SharedModule { }

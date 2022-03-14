@@ -6,13 +6,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { CambioPasswordComponent } from './components/cambio-password/cambio-password.component';
 import { RecaptchaFormsModule, RecaptchaModule, RecaptchaSettings, RECAPTCHA_SETTINGS, RECAPTCHA_V3_SITE_KEY } from 'ng-recaptcha';
+import { RecuperacionPasswordComponent } from './components/recuperacion-password/recuperacion-password.component';
 
 
 
 @NgModule({
   declarations: [
     LoginMainComponent,
-    CambioPasswordComponent
+    CambioPasswordComponent,
+    RecuperacionPasswordComponent
   ],
   imports: [
     CommonModule,

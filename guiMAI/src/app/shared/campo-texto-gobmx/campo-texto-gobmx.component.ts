@@ -1,6 +1,5 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControlName, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { TipoInput } from './tipo-input.enum';
 
 @Component({
@@ -45,12 +44,12 @@ export class CampoTextoGobmxComponent implements OnInit {
     //console.log(this.formGroup)
   }
 
-  mascara(event: any){
+  mascara(event: any) {
     switch (this.tipo) {
       case TipoInput.PASSWORD:
         this.esPassword = true;
         this.soloMayusculas = false;
-      break;
+        break;
       case TipoInput.ALFANUMERICO:
         this.textoAlfanumerico(event);
         break;
@@ -60,19 +59,45 @@ export class CampoTextoGobmxComponent implements OnInit {
       case TipoInput.CORREO:
         this.correo(event);
         break;
+      case TipoInput.CARACTERES_TEXTO:
+        this.textoConespeciales(event);
+        break;
+      case TipoInput.TEXTO_ESPACIO:
+        this.textoConEspacio(event);
+        break;
       default:
         this.soloTexto(event)
         break;
     }
   }
 
-  togglePassword(event: any){
+  togglePassword(event: any) {
     this.fieldTextType = !this.fieldTextType;
   }
 
   private soloTexto(event: any) {
     var inp = String.fromCharCode(event.keyCode);
+    if (/[a-zñA-ZÑ]/.test(inp)) {
+      return true;
+    } else {
+      event.preventDefault();
+      return false;
+    }
+  }
+
+  private textoConEspacio(event: any) {
+    var inp = String.fromCharCode(event.keyCode);
     if (/[a-zñA-ZÑ ]/.test(inp)) {
+      return true;
+    } else {
+      event.preventDefault();
+      return false;
+    }
+  }
+
+  private textoConespeciales(event: any) {
+    var inp = String.fromCharCode(event.keyCode);
+    if (this.validarRegexp(/[a-zñA-ZÑ\-\._]/, inp)) {
       return true;
     } else {
       event.preventDefault();
@@ -108,5 +133,9 @@ export class CampoTextoGobmxComponent implements OnInit {
       event.preventDefault();
       return false;
     }
+  }
+
+  private validarRegexp(regexp: RegExp, input: string): boolean {
+    return regexp.test(input)
   }
 }

@@ -1,0 +1,95 @@
+.nav-titulo {
+  text-align: center;
+  line-height: 40px;
+  margin: 0px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #222222;
+}
+
+.nav-subtitulo {
+  text-align: center;
+  margin: 0px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #222222;
+}
+
+.nav-registro {
+  height: 100px;
+}
+.subnavbar-titulo {
+  line-height: 60px;
+}
+
+.subnavbar-footer {
+  height: 60px;
+  position: relative;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: #222222;
+  text-align: center;
+  padding-top: 10px;
+  background-color: #fff;
+}
+
+.nav-footer-text{
+  float: left;
+  padding-top: 10px;
+}
+
+.footer-button {
+  width: 104px;
+  height: 40px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.nav-bottom {
+  /* position: absolute;
+  bottom: 0px; */
+  width: 100%;
+  -webkit-box-shadow: 0px 0px 11px rgb(50 50 50 / 70%);
+  -moz-box-shadow: 0px 0px 11px rgb(50 50 50 / 70%);
+  box-shadow: 0px 0px 11px rgb(50 50 50 / 70%);
+}
+
+.divisor {
+  margin: 0px;
+}
+
+.contenido-principal {
+  padding-top: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  overflow-y: scroll;
+  height: 100%;
+  max-height: 735px;
+}
+
+.contenido-principal::-webkit-scrollbar { width: 0 !important }
+.contenido-principal { overflow: -moz-scrollbars-none; }
+.contenido-principal { -ms-overflow-style: none; }
+
+.regresar {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: right;
+  color: #666666;
+  padding-left: 5px;
+}
+
+@media all and (max-width: 912px) {
+  .regresar {
+    display: none;
+  }
+}

@@ -1,0 +1,60 @@
+<div class="home-container">
+  <mat-toolbar class="navbar-inverse">
+   <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+
+    <button mat-icon-button  class="burgerButton" (click)="sidenav.toggle()">
+        <mat-icon >
+          menu
+      </mat-icon>
+    </button>
+    <span class="toolbar-titulo">Amparo Indirecto</span>
+    <div class="datos-usuario">
+      <span class="toolbar-titulo">Leonardo Gutierrez</span>
+      <p class="toolbar-texto">Abogado principal</p>
+    </div>
+
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <div class="top-boton">
+          <button class="btn btn-primary" (click)="route.navigateByUrl('/home/notificacion/registro')" >Nuevo Registro</button>
+        </div>
+
+        <button mat-button class="menu-button" [routerLink]="'/home/exp'">
+          <mat-icon>grid_view</mat-icon>
+          <span>Inicio</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>backup</mat-icon>
+            <span>Actualización</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>text_snippet</mat-icon>
+            <span>Reportes</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button class="btn btn-success menu-button cerrar-sesion" (click)="route.navigateByUrl('/main')">
+            <mat-icon>power_settings_new</mat-icon>
+            <span>Cerrar sesión</span>
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="contenido-main">
+          <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+

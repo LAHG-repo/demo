@@ -1,6 +1,6 @@
 import { ModalService } from 'src/app/shared/modalgobmx/modal.service';
 import { TipoInput } from './../../../shared/campo-texto-gobmx/tipo-input.enum';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, Input } from '@angular/core';
 import { Validators, FormBuilder, FormGroup, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotificacionService } from '../../../shared/notificacion/notificacion.service';
@@ -21,13 +21,16 @@ export class LoginMainComponent implements OnInit, OnDestroy {
 
   tipoCampo = TipoInput;
   isSubmited: boolean = false;
-  esPrimeraVez: boolean = false;
+  mostrarRecuperacion: boolean = false;
 
   loginform: FormGroup;
   authSubscription: Subscription;
   roles: any;
 
-  private readonly mainUrl = '/simulador';
+  @Input()
+  actualizarPassword: boolean;
+
+  private readonly mainUrl = '/home';
 
   constructor(private router: Router,
     private notificacionService: NotificacionService,
@@ -38,6 +41,7 @@ export class LoginMainComponent implements OnInit, OnDestroy {
     private session: SessionStorageService
   ) {
     this.generarFormulario();
+    this.actualizarPassword = false;
   }
 
   ngOnDestroy(): void {
@@ -49,18 +53,30 @@ export class LoginMainComponent implements OnInit, OnDestroy {
       this.tokenStorageService.limpiarSesion();
       this.session.clear();
     }
+
+    if(this.actualizarPassword === undefined){
+      this.actualizarPassword = false;
+    }
+    console.log(this.mostrarRecuperacion,this.actualizarPassword);
+  }
+
+  onReiniciarResponse(response: boolean){
+    if(response){
+      this.actualizarPassword = false;
+      this.mostrarRecuperacion = false;
+    }
   }
 
   doLogin(): void {
     this.isSubmited = true;
-    console.log('CURP',this.loginform);
 
     if (this.loginform.invalid) {
       this.notificacionService.mostrarNotificacionError('Debe completar los datos obligatorios');
     }else{
-      const curp = this.loginform.controls.curp.value;
-      const paswd = this.loginform.controls.noempleado.value;
-      this.authSubscription = this.authService.login(curp,paswd)
+      this.router.navigateByUrl(this.mainUrl);
+      /*const usuario = this.loginform.controls.usuario.value;
+      const paswd = this.loginform.controls.password.value;
+      this.authSubscription = this.authService.login(usuario,paswd)
       .subscribe(response=>{
         console.log(response);
         this.tokenStorageService.saveToken(response.access_token);
@@ -68,10 +84,11 @@ export class LoginMainComponent implements OnInit, OnDestroy {
         this.tokenStorageService.saveUser(response.nombre);
         this.tokenStorageService.saveTokenExpiracion(response.expires_in);
         this.router.navigateByUrl(this.mainUrl);
+
       }, err =>{
-        this.notificacionService.mostrarNotificacionError('Usuario no válido, por favor verifique');
+        this.notificacionService.mostrarNotificacionError('Usuario y/o contraseña incorrectos, Favor de capturar de nuevo');
         console.log(err)
-      })
+      })*/
     }
 
 
@@ -98,7 +115,8 @@ export class LoginMainComponent implements OnInit, OnDestroy {
 
 
   doRecuperacion(){
-    this.modalService.mostrarSoloAviso('','Se ha mandado un mensaje al correo de la cuenta con la nueva contraseña.','Continuar');
+    this.mostrarRecuperacion = true;
+    this.actualizarPassword = false;
   }
 
 
@@ -107,21 +125,24 @@ export class LoginMainComponent implements OnInit, OnDestroy {
     this.isSubmited = false;
   }
 
+  public validarCampo(campo: AbstractControl){
+    return Utils.esCampoNoValido(campo, this.isSubmited)
+  }
+
   private generarFormulario() {
     this.loginform = this.formbuilder.group({
-      curp: ['', Validators.compose([Validators.required, Validators.minLength(18)])],
-      noempleado: ['', Validators.compose([Validators.required])],
-      captcha: [null,Validators.required]
+      usuario: ['', Validators.compose([Validators.required])],
+      password: ['', Validators.compose([Validators.required])]
     },
     {
-      validators: this.verificarFormatoCurp
+      //validators: this.verificarFormatoCorreo
     }
     );
   }
 
-  verificarFormatoCurp: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
-    const curp = group.get('curp')?.value;
-    const validacion = Utils.verificarFormatoCurp(curp);
+  verificarFormatoCorreo: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
+    const usuario = group.get('usuario')?.value;
+    const validacion = Utils.verificarFormatoEmail(usuario);
     return validacion ? null : { noValido: true }
   }
 }

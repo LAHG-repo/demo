@@ -9,6 +9,44 @@
     -webkit-transform: scale(0.7);
     -webkit-transform-origin: 0 0;
   }
+
+  .login-panel {
+    margin: inherit !important;
+  }
+
+  .panel-body {
+    min-height: inherit !important;
+    max-height: inherit;
+  }
+}
+
+.login-panel {
+  background-color: #fff;
+  border-radius: 20px;
+  margin: 50px 100px;
+}
+
+.panel-heading {
+  color: #333;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.panel-body {
+  padding: 5px 30px;
+  min-height: 300px;
+  max-height: 300px;
+}
+
+.panel {
+  border-radius: 20px;
+}
+
+.panel-footer {
+  border: none;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 15px 10px;
 }
 
 .form-login-custom {
@@ -17,26 +55,22 @@
 }
 
 .btn-acceder {
-  min-width: 215px;
+  min-width: 174px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  height: 41px;float: right;
 }
 
 a.vinculo {
-  background-color: transparent;
-  font-family: Montserrat;
-  font-size: 12px;
-  font-weight: 600;
-  font-stretch: normal;
   font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #12c;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 40px;
+  color: #18a0fb;
   text-decoration: none;
   cursor: pointer;
-}
-
-.form-control {
-  margin-bottom: 0px !important;
 }
 
 .espacio {
@@ -47,6 +81,42 @@ a.vinculo {
   margin-top: 25px;
 }
 
+.titulo {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 27px;
+  align-items: center;
+  text-align: center;
+  color: #222222;
+}
+
+.subtitulo {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 120%;
+  text-align: center;
+  color: #393c3e;
+}
+
+::ng-deep .control-label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #666666;
+}
+
 ::ng-deep .form-group {
+  margin-bottom: 0px !important;
+}
+
+::ng-deep .form-control {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #222222;
   margin-bottom: 0px !important;
 }

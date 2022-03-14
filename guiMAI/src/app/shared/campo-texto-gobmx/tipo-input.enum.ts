@@ -3,5 +3,7 @@ export enum TipoInput {
   TEXTO = 2,
   ALFANUMERICO = 3,
   CORREO = 4,
-  PASSWORD = 5
+  PASSWORD = 5,
+  CARACTERES_TEXTO = 6,
+  TEXTO_ESPACIO = 7
 }

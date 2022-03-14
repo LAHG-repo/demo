@@ -5,6 +5,7 @@ import { NotificacionService } from 'src/app/shared/notificacion/notificacion.se
 import { TokenStorageService } from 'src/app/shared/services/token-storage.service';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { TipoInput } from 'src/app/shared/campo-texto-gobmx/tipo-input.enum';
 
 @Component({
   selector: 'app-cambio-password',
@@ -15,6 +16,7 @@ export class CambioPasswordComponent implements OnInit {
 
   actualizacionform: FormGroup;
   isSubmited: boolean = false;
+  tipoCampo = TipoInput;
 
   constructor(
     private notificacionService: NotificacionService,
@@ -53,7 +55,8 @@ export class CambioPasswordComponent implements OnInit {
 
   private generarFormulario() {
     this.actualizacionform = this.formbuilder.group({
-      password: ['', Validators.compose([Validators.required, Validators.minLength(5)])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(8),
+        Validators.pattern(/^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,}$/)])],
       confirmacion: ['', Validators.required]
     }, {
       validators: this.checkPasswords
@@ -64,5 +67,9 @@ export class CambioPasswordComponent implements OnInit {
     let pass = group.get('password')?.value;
     let confirmPass = group.get('confirmacion')?.value
     return pass === confirmPass ? null : { sonDistintos: true }
+  }
+
+  checkCriterios(){
+
   }
 }
