@@ -1,0 +1,14 @@
+{
+  "/api":{
+      "target":"https://prod.cloudapps.imss.gob.mx/api",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": { "^/api": ""}
+  },
+  "/msTss-auth":{
+    "target":"https://prod.cloudapps.imss.gob.mx/auth",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": { "^/auth": ""}
+  }
+}
